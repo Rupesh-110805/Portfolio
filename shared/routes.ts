@@ -1,5 +1,7 @@
 import { z } from 'zod';
-import { insertProjectSchema, insertSkillSchema, insertMessageSchema, projects, skills, messages } from './schema';
+import { insertProjectSchema, insertSkillSchema, insertMessageSchema, projects, skills, messages, type InsertProject, type InsertMessage } from './schema';
+
+export { type InsertProject, type InsertMessage };
 
 export const api = {
   projects: {
