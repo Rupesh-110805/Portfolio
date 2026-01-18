@@ -60,18 +60,39 @@ async function seedDatabase() {
   if (existingProjects.length === 0) {
     await db.insert(projects).values([
       {
-        title: "Django Chat App",
-        description: "A real-time chat application with WebSockets, Docker, and PostgreSQL. Features Google OAuth, live user status, emoji reactions, and admin moderation.",
-        techStack: ["Django", "Django Channels", "WebSockets", "Docker", "PostgreSQL", "Redis"],
-        githubLink: "https://github.com/Rupesh-110805/Django-Chat-App",
+        title: "CSES-solutions",
+        description: "A curated collection of solutions to problems on the CSES Problem Set. Solutions are written in modern C++, focused on competitive programming techniques like dynamic programming, graphs, and greedy algorithms.",
+        techStack: ["C++", "Algorithms", "DSA"],
+        githubLink: "https://github.com/Rupesh-110805/CSES-solutions",
+        imageUrl: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=1000",
+      },
+      {
+        title: "DDOS_Project",
+        description: "A Python project demonstrating a simulated DDOS attack tool with logging and basic protections. Explores network programming and multithreading concepts.",
+        techStack: ["Python", "Networking", "Multithreading"],
+        githubLink: "https://github.com/Rupesh-110805/DDOS_Project",
+        imageUrl: "https://images.unsplash.com/photo-1558494949-ef2bb6db8744?auto=format&fit=crop&q=80&w=1000",
+      },
+      {
+        title: "django-chat-app",
+        description: "A real-time chat application built with Django and WebSockets. Users can exchange messages in chat rooms with session management and intuitive UI.",
+        techStack: ["Django", "WebSockets", "PostgreSQL", "Redis"],
+        githubLink: "https://github.com/Rupesh-110805/django-chat-app",
         imageUrl: "https://images.unsplash.com/photo-1611746435392-5021db4c2411?auto=format&fit=crop&q=80&w=1000",
       },
       {
-        title: "DDoS Attack Detector",
-        description: "Real-time DDoS detection system using Shannon's entropy analysis of network traffic, achieving over 90% accuracy. Features a live visualization dashboard.",
-        techStack: ["Flask", "Flask-SocketIO", "Chart.js", "Bootstrap", "Python"],
-        githubLink: "https://github.com/Rupesh-110805/DDoS-Attack-Detector-Entropy-Based-",
-        imageUrl: "https://images.unsplash.com/photo-1558494949-ef2bb6db8744?auto=format&fit=crop&q=80&w=1000",
+        title: "Pneumonia-Detection-XAI",
+        description: "A pneumonia detection model using CNN with explainable AI (XAI) visualizations on chest X-rays. Provides interpretability for medical imaging decisions.",
+        techStack: ["Python", "PyTorch", "Deep Learning", "XAI"],
+        githubLink: "https://github.com/Rupesh-110805/Pneumonia-Detection-XAI",
+        imageUrl: "https://images.unsplash.com/photo-1530213786676-41ad9f7736f6?auto=format&fit=crop&q=80&w=1000",
+      },
+      {
+        title: "Talent-flow",
+        description: "A mini hiring platform built with TypeScript and modern frontend stack. Includes project-level features like search, filters, and intuitive UI components.",
+        techStack: ["TypeScript", "React", "Frontend Design"],
+        githubLink: "https://github.com/Rupesh-110805/Talent-flow",
+        imageUrl: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=1000",
       }
     ]);
   }
@@ -84,20 +105,27 @@ async function seedDatabase() {
       { name: "Python", category: "Languages" },
       { name: "SQL", category: "Languages" },
       { name: "JavaScript", category: "Languages" },
+      { name: "TypeScript", category: "Languages" },
       
-      // Web Development
+      // Frameworks & Web
       { name: "React", category: "Frameworks" },
       { name: "Django", category: "Frameworks" },
       { name: "FastAPI", category: "Frameworks" },
       { name: "Flask", category: "Frameworks" },
+      { name: "Machine Learning", category: "Frameworks" },
+      { name: "CNNs", category: "Frameworks" },
 
-      // Tools
+      // Tools & Technical
       { name: "Linux", category: "Tools" },
       { name: "Docker", category: "Tools" },
       { name: "Git/GitHub", category: "Tools" },
       { name: "GitHub Actions", category: "Tools" },
-      { name: "PostgreSQL", category: "Tools" },
-      { name: "Redis", category: "Tools" },
+      { name: "WebSockets", category: "Tools" },
+      { name: "DSA", category: "Tools" },
+      { name: "Competitive Programming", category: "Tools" },
+      { name: "Network Programming", category: "Tools" },
+      { name: "Multithreading", category: "Tools" },
+      { name: "Explainable AI", category: "Tools" },
     ]);
   }
 }

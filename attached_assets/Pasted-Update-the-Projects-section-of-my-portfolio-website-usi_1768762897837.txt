@@ -1,0 +1,50 @@
+Update the Projects section of my portfolio website using the following GitHub project details. 
+Do NOT change layout or styling — only update project content and relevant skills.
+
+Here are my pinned projects (GitHub: https://github.com/Rupesh-110805):
+
+1. CSES-solutions
+   - URL: https://github.com/Rupesh-110805/CSES-solutions
+   - Description: A curated collection of solutions to problems on the CSES Problem Set.
+     Solutions are written in modern C++, focused on competitive programming techniques like 
+     dynamic programming, graphs, greedy, and data structures.
+   - Tech: C++, Algorithms, Problem Solving
+   - Skills to add: C++, DSA, Competitive Programming
+
+2. DDOS_Project
+   - URL: https://github.com/Rupesh-110805/DDOS_Project
+   - Description: A Python project demonstrating a simulated DDOS attack tool with logging 
+     and basic protections. Included network programming and threading.
+   - Tech: Python, Networking, Threading
+   - Skills to add: Python, Network Programming, Multithreading
+
+3. django-chat-app
+   - URL: https://github.com/Rupesh-110805/django-chat-app
+   - Description: A real-time chat application built with Django and WebSockets. Users can 
+     exchange messages in chat rooms with session management.
+   - Tech: Django, HTML, CSS, WebSockets
+   - Skills to add: Django, Web Development, WebSockets
+
+4. Pneumonia-Detection-XAI
+   - URL: https://github.com/Rupesh-110805/Pneumonia-Detection-XAI
+   - Description: A Jupyter notebook showcasing a pneumonia detection model using CNN 
+     with explainable AI (XAI) visualizations on chest X-rays.
+   - Tech: Python, PyTorch/TensorFlow, XAI, Deep Learning
+   - Skills to add: Machine Learning, CNNs, Explainable AI
+
+5. Talent-flow
+   - URL: https://github.com/Rupesh-110805/Talent-flow
+   - Description: A mini hiring platform built with TypeScript and modern frontend stack.
+     Includes project-level features like search, filters, and intuitive UI components.
+   - Tech: TypeScript, React, Frontend Design
+   - Skills to add: TypeScript, React, Frontend Development
+
+Rules:
+- For each project, use concise but technical descriptions.
+- Add corresponding skills to the existing list.
+- Do not remove any existing projects unless they are duplicates or low quality.
+- Do not invent any details not present in the repository/readme.
+
+Output:
+- Only update the Projects section content.
+- List files modified at the end.
