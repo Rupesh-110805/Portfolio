@@ -65,11 +65,11 @@ export default function Home() {
       <div className="hidden lg:block fixed right-12 bottom-0 z-10 w-10">
         <div className="flex flex-col items-center gap-6">
           <a 
-            href="mailto:hello@example.com" 
+            href="mailto:rupeshnidadavolu110805@gmail.com" 
             className="text-mono text-sm text-muted-foreground hover:text-primary transition-colors writing-vertical-rl py-4"
             style={{ writingMode: 'vertical-rl' }}
           >
-            hello@example.com
+            rupeshnidadavolu110805@gmail.com
           </a>
           <div className="w-px h-24 bg-border" />
         </div>
@@ -86,13 +86,13 @@ export default function Home() {
           >
             <p className="text-primary font-mono mb-5 ml-1">Hi, my name is</p>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-4">
-              Jane Doe.
+              N.S.S. Rupesh.
             </h1>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-muted-foreground mb-8">
-              I build things for the web.
+              I build scalable software.
             </h2>
             <p className="max-w-xl text-muted-foreground text-lg leading-relaxed mb-12">
-              I'm a computer science student and software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.
+              I'm a Computer Science and Engineering student at NIT Durgapur, specializing in building high-performance backend systems and full-stack applications. Currently focused on real-time systems and scalable architectures.
             </p>
             
             <ScrollLink
@@ -109,15 +109,15 @@ export default function Home() {
 
         {/* SKILLS SECTION */}
         <section id="skills" className="py-24 md:py-32 max-w-3xl mx-auto">
-          <SectionHeading number="01" title="Skills & Technologies" />
+          <SectionHeading number="01" title="Background & Skills" />
           
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                Hello! My name is Jane and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is pretty fun!
+                Hello! I'm Rupesh, a Computer Science student with a passion for building robust and scalable applications. My journey in technology is driven by a deep interest in distributed systems, real-time messaging, and network security.
               </p>
               <p>
-                Fast-forward to today, and I’ve had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio.
+                Currently pursuing my B.Tech at NIT Durgapur, I've had the opportunity to lead programming initiatives as a Convener at RECursion, where I mentor students and test complex algorithmic problems.
               </p>
             </div>
 
@@ -180,7 +180,7 @@ export default function Home() {
           <p className="text-primary font-mono mb-4">03. What's Next?</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Get In Touch</h2>
           <p className="text-muted-foreground text-lg mb-12">
-            Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+            I'm currently looking for new opportunities and my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
 
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-md mx-auto text-left">

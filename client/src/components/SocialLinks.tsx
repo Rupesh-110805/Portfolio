@@ -2,10 +2,10 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export function SocialLinks({ className = "", vertical = false }: { className?: string, vertical?: boolean }) {
   const links = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/Rupesh-110805", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/rupesh-nidadavolu", label: "LinkedIn" },
     { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+    { icon: Mail, href: "mailto:rupeshnidadavolu110805@gmail.com", label: "Email" },
   ];
 
   return (
