@@ -100,38 +100,32 @@ async function seedDatabase() {
   const existingSkills = await storage.getSkills();
   if (existingSkills.length === 0) {
     await db.insert(skills).values([
-      // Programming Languages
-      { name: "C++", category: "Programming Languages" },
-      { name: "Python", category: "Programming Languages" },
-      { name: "TypeScript", category: "Programming Languages" },
+      // Languages
+      { name: "C++", category: "Languages" },
+      { name: "Python", category: "Languages" },
+      { name: "SQL", category: "Languages" },
+      { name: "JavaScript", category: "Languages" },
+      { name: "TypeScript", category: "Languages" },
       
-      // Frontend
-      { name: "React", category: "Frontend" },
-      { name: "TypeScript", category: "Frontend" },
-      { name: "HTML", category: "Frontend" },
-      { name: "CSS", category: "Frontend" },
+      // Frameworks & Web
+      { name: "React", category: "Frameworks" },
+      { name: "Django", category: "Frameworks" },
+      { name: "FastAPI", category: "Frameworks" },
+      { name: "Flask", category: "Frameworks" },
+      { name: "Machine Learning", category: "Frameworks" },
+      { name: "CNNs", category: "Frameworks" },
 
-      // Backend
-      { name: "Django", category: "Backend" },
-
-      // ML / AI
-      { name: "Machine Learning", category: "ML / AI" },
-      { name: "CNNs", category: "ML / AI" },
-      { name: "Deep Learning", category: "ML / AI" },
-      { name: "Explainable AI", category: "ML / AI" },
-
-      // CS Core
-      { name: "Data Structures", category: "CS Core" },
-      { name: "Algorithms", category: "CS Core" },
-      { name: "Competitive Programming", category: "CS Core" },
-
-      // Systems / Networking
-      { name: "Network Programming", category: "Systems / Networking" },
-      { name: "Multithreading", category: "Systems / Networking" },
-
-      // Tools / Others
-      { name: "Git", category: "Tools / Others" },
-      { name: "WebSockets", category: "Tools / Others" },
+      // Tools & Technical
+      { name: "Linux", category: "Tools" },
+      { name: "Docker", category: "Tools" },
+      { name: "Git/GitHub", category: "Tools" },
+      { name: "GitHub Actions", category: "Tools" },
+      { name: "WebSockets", category: "Tools" },
+      { name: "DSA", category: "Tools" },
+      { name: "Competitive Programming", category: "Tools" },
+      { name: "Network Programming", category: "Tools" },
+      { name: "Multithreading", category: "Tools" },
+      { name: "Explainable AI", category: "Tools" },
     ]);
   }
 }
