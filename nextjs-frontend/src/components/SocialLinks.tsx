@@ -4,7 +4,7 @@ export function SocialLinks({ className = "", vertical = false }: { className?: 
   const links = [
     { icon: Github, href: "https://github.com/Rupesh-110805", label: "GitHub" },
     { icon: Linkedin, href: "https://linkedin.com/in/rupesh-nidadavolu", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Twitter, href: "https://x.com/apexthinkerRN", label: "Twitter" },
     { icon: Mail, href: "mailto:rupeshnidadavolu110805@gmail.com", label: "Email" },
   ];
 
