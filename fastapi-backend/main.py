@@ -43,17 +43,27 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # CORS middleware - allow Next.js frontend
+# Build origins list, filtering out empty strings
+cors_origins = [
+    "http://localhost:3000",  # Next.js dev server
+    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
+# Add production frontend URL if configured
+frontend_url = os.getenv("FRONTEND_URL", "")
+if frontend_url:
+    cors_origins.append(frontend_url)
+    # Also allow without trailing slash
+    cors_origins.append(frontend_url.rstrip("/"))
+
+print(f"📋 CORS allowed origins: {cors_origins}")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",  # Next.js dev server
-        "http://127.0.0.1:3000",
-        "http://localhost:8000",
-        "http://127.0.0.1:8000",
-        os.getenv("FRONTEND_URL", ""),  # Production frontend URL
-    ],
+    allow_origins=cors_origins,
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
 
