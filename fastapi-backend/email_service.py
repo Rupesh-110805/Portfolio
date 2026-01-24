@@ -71,18 +71,69 @@ async def send_contact_notification(
     sender_email = os.getenv("MAIL_FROM", "onboarding@resend.dev")
     sender_name = os.getenv("MAIL_FROM_NAME", "Portfolio Contact")
 
-    # Build HTML content
+    # Build HTML content - Professional design matching original template
     html_content = f"""
+    <!DOCTYPE html>
     <html>
-    <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #6366f1;">New Contact Form Submission</h2>
-        <div style="background: #f3f4f6; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Name:</strong> {name}</p>
-            <p><strong>Email:</strong> <a href="mailto:{email}">{email}</a></p>
-            <p><strong>Message:</strong></p>
-            <p style="background: white; padding: 15px; border-radius: 4px;">{message}</p>
-        </div>
-        <p style="color: #6b7280; font-size: 12px;">Sent from IP: {ip_address}</p>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>New Portfolio Message</title>
+    </head>
+    <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <!-- Header with gradient -->
+            <tr>
+                <td style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 30px; text-align: center;">
+                    <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 600;">
+                        📬 New Portfolio Message
+                    </h1>
+                </td>
+            </tr>
+            
+            <!-- Content -->
+            <tr>
+                <td style="padding: 30px;">
+                    <!-- From -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #6366f1; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">FROM</label>
+                        <div style="background-color: #f9fafb; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            {name}
+                        </div>
+                    </div>
+                    
+                    <!-- Email -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #6366f1; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">EMAIL</label>
+                        <div style="background-color: #f9fafb; padding: 12px 16px; border-radius: 8px; border: 1px solid #e5e7eb;">
+                            <a href="mailto:{email}" style="color: #3b82f6; text-decoration: none;">{email}</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Message -->
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: #6366f1; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">MESSAGE</label>
+                        <div style="background-color: #f9fafb; padding: 16px; border-radius: 8px; border-left: 4px solid #a3e635; border-top: 1px solid #e5e7eb; border-right: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
+                            <p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">{message}</p>
+                        </div>
+                    </div>
+                    
+                    <!-- IP Address -->
+                    <div style="background-color: #fef9c3; padding: 12px 16px; border-radius: 8px; margin-top: 20px;">
+                        <span style="color: #ca8a04;">🌐 Sender IP: {ip_address}</span>
+                    </div>
+                </td>
+            </tr>
+            
+            <!-- Footer -->
+            <tr>
+                <td style="padding: 20px 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+                    <p style="margin: 0; color: #9ca3af; font-size: 13px;">
+                        Sent from your Portfolio Contact Form
+                    </p>
+                </td>
+            </tr>
+        </table>
     </body>
     </html>
     """
