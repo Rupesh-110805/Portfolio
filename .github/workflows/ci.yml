@@ -55,4 +55,4 @@ jobs:
         run: uv sync
 
       - name: Check syntax
-        run: uv run python -m py_compile main.py database.py models.py schemas.py seed.py
+        run: uv run python -m py_compile main.py database.py models.py schemas.py seed.py email_service.py

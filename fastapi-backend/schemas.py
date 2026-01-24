@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from typing import Optional
+from datetime import datetime
 
 
 # Project schemas
@@ -43,16 +44,37 @@ class SkillResponse(SkillBase):
 # Message schemas
 class MessageBase(BaseModel):
     name: str
-    email: str
+    email: EmailStr
     message: str
 
 
 class MessageCreate(MessageBase):
-    pass
+    # Honeypot field - should always be empty from real users
+    # Bots often fill in all fields, so if this has a value, it's a bot
+    bot_check: Optional[str] = None
 
 
 class MessageResponse(MessageBase):
     id: int
+    created_at: Optional[datetime] = None
+
+    class Config:
+        from_attributes = True
+
+
+# BlockedSender schemas
+class BlockSenderRequest(BaseModel):
+    email: Optional[str] = None
+    ip_address: Optional[str] = None
+    reason: Optional[str] = None
+
+
+class BlockedSenderResponse(BaseModel):
+    id: int
+    email: Optional[str]
+    ip_address: Optional[str]
+    reason: Optional[str]
+    created_at: Optional[datetime]
 
     class Config:
         from_attributes = True

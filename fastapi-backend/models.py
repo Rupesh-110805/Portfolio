@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, JSON
+from sqlalchemy import Column, Integer, String, JSON, DateTime
+from sqlalchemy.sql import func
 from database import Base
 
 
@@ -29,3 +30,16 @@ class Message(Base):
     name = Column(String, nullable=False)
     email = Column(String, nullable=False)
     message = Column(String, nullable=False)
+    ip_address = Column(String, nullable=True)
+    created_at = Column(DateTime, server_default=func.now())
+
+
+class BlockedSender(Base):
+    """Store blocked emails and IPs for shadowbanning spammers"""
+    __tablename__ = "blocked_senders"
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String, nullable=True, index=True)
+    ip_address = Column(String, nullable=True, index=True)
+    reason = Column(String, nullable=True)
+    created_at = Column(DateTime, server_default=func.now())
