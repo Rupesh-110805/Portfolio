@@ -13,15 +13,19 @@ from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 from pydantic import EmailStr
 
 # Email configuration from environment variables
+# Note: Use port 465 with SSL for cloud platforms that block port 587
+mail_port = int(os.getenv("MAIL_PORT", "465"))
+use_ssl = mail_port == 465  # Use SSL for port 465, STARTTLS for 587
+
 conf = ConnectionConfig(
     MAIL_USERNAME=os.getenv("MAIL_USERNAME", ""),
     MAIL_PASSWORD=os.getenv("MAIL_PASSWORD", ""),
     MAIL_FROM=os.getenv("MAIL_FROM", "noreply@example.com"),
-    MAIL_PORT=int(os.getenv("MAIL_PORT", "587")),
+    MAIL_PORT=mail_port,
     MAIL_SERVER=os.getenv("MAIL_SERVER", "smtp.gmail.com"),
     MAIL_FROM_NAME=os.getenv("MAIL_FROM_NAME", "Portfolio Contact"),
-    MAIL_STARTTLS=True,
-    MAIL_SSL_TLS=False,
+    MAIL_STARTTLS=not use_ssl,  # Use STARTTLS only for port 587
+    MAIL_SSL_TLS=use_ssl,  # Use SSL for port 465
     USE_CREDENTIALS=True,
     VALIDATE_CERTS=True,
     TEMPLATE_FOLDER=Path(__file__).parent / "templates",
