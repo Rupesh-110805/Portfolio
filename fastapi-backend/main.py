@@ -187,14 +187,26 @@ async def create_message(
     db.refresh(db_message)
     
     # 4. Send email notification in background (non-blocking)
+    print(f"📧 Checking email config: is_email_configured={is_email_configured()}")
     if is_email_configured():
-        background_tasks.add_task(
-            send_contact_notification,
-            name=message.name,
-            email=message.email,
-            message=message.message,
-            ip_address=ip_address,
-        )
+        async def send_email_with_logging():
+            try:
+                print(f"📤 Attempting to send email notification to owner...")
+                result = await send_contact_notification(
+                    name=message.name,
+                    email=message.email,
+                    message=message.message,
+                    ip_address=ip_address,
+                )
+                print(f"📧 Email send result: {result}")
+            except Exception as e:
+                print(f"❌ Email background task error: {e}")
+                import traceback
+                traceback.print_exc()
+        
+        background_tasks.add_task(send_email_with_logging)
+    else:
+        print("⚠️ Email not configured, skipping notification")
     
     return db_message
 
