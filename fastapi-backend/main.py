@@ -49,8 +49,8 @@ cors_origins = [
     "http://127.0.0.1:3000",
     "http://localhost:8000",
     "http://127.0.0.1:8000",
-    "https://www.rupesh-nidadavolu.me/",
-    "https://rupesh-nidadavolu.me/"
+    "https://www.rupesh-nidadavolu.me",
+    "https://rupesh-nidadavolu.me"
 ]
 # Add production frontend URL if configured
 frontend_url = os.getenv("FRONTEND_URL", "")
